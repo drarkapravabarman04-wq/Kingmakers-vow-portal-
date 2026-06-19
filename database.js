@@ -1,0 +1,56 @@
+const brahmiAncestralGlyphs = ['𑀓','𑀔','𑀕','𑀖','𑀗','𑀘','𑀙','𑀚','𑀛','𑀜','𑀝','𑀞','𑀟','𑀠','𑀡','𑀢','𑀣','𑀤','𑀥','𑀦','𑀧','𑀨','𑀩','𑀪','𑀫','𑀬','𑀭','𑀮','𑀯','𑀰'];
+
+const ARC_DATA = {
+  1: { min: 1, max: 16, name: 'Greenwood', desc: 'Arc 1: Greenwood — characters 1 to 16', title: 'Start Reading Arc 1', badge: '16 CHAPTERS COMPLETE', read: 'Experience the full sequence of Krish\'s reincarnation, his grueling early combat drills alongside Governor Basu, the fated temporal experiments with Aunt Yeashi\'s syllabic scripts, and the quiet frontier before northern forces surround the outpost.', theme: 'arc-theme-1', cover: 'https://i.postimg.cc/2S9Jym6K/file-00000000d6f8722f9d2b74daf23a14f4(1).png' },
+  2: { min: 17, max: 30, name: 'Greenwood Continuance', desc: 'Arc 2: Greenwood — characters 17 to 30', title: 'Start Reading Arc 2', badge: '14 CHAPTERS COMPLETE', read: 'Continue into the next Greenwood sequence as the cast expands, the political tension sharpens, and the broader consequences of the border conflict begin to unfold.', theme: 'arc-theme-2', cover: 'https://i.postimg.cc/Z54tC3N5/file-000000002088720b83b221042c2fd62b.png' }
+};
+
+const NOVEL_CHARACTERS = [
+  { name: 'Krish Laran', role: 'Reincarnated Protagonist', minCh: 1, desc: 'Reincarnated from modern Japan after dying a self-described "parasite" at 33. In his past life, he had unmatched talents but failed due to zero effort. Now, born a highly intelligent child in Greenwood, he carries his adult tactical brain, teaching himself combat and the art of Sankalp.', vowType: 'None', quote: '“If we go to Oakridge, will we have access to the high libraries?.”' },
+  { name: 'Basu Laran', role: 'Knight Governor', minCh: 1, desc: 'Knight Governor of the Brinda district. A doting strict father and responsible husband. An astonishingly powerful warrior practicing the Raghavan Swordsmanship and the Chakra style.', vowType: 'Protecting Brinda', quote: '“A warrior’s purpose isn’t just to carve trenches in snow with stell. It’s to ensure when the storm clears, the people beneath his shield are still standing to see the rainbow.”' },
+  { name: 'Devi Laran', role: 'Krish\'s mother, Healer', minCh: 1, desc: 'Possesses a dominant, fiercely protective personality. Highly trained in specialized herbal extraction and medicine. Act as a healer and treat patient from home.', vowType: 'Unknown', quote: '“If you don’t learn the grain of the plant now, you’ll spend your winters tearing the cloth instead of cleaning the wound.”' },
+  { name: 'Aunt Yeashi', role: 'Teacher of Krish, Vessel Artisian', minCh: 1, desc: 'Devi\'s teenage sister, living as a freeloading helper. Hyper-active and highly skilled in Laone script transcription, she acts as Krish\'s involuntary gateway into magical mechanics.', vowType: 'kiss with Krish', quote: '“Scriptic sigils are a hybrid. You follow the exact same steps to get the compressed string, then weave those characters directly into a symbolic image.”' },
+  { name: 'Sister Mimi', role: 'Krish\'s sister', minCh: 4, desc: 'Krish\'s younger sister. A remarkably cute toddler who already demonstrates subtle, highly-perceptive capabilities, matching the analytical patterns of her family.', vowType: 'None', quote: '“Broken.Waste.”' },
+  { name: 'Dipa', role: 'Main House Guard-Maid / Royal Spy', minCh: 3, desc: 'Sent to the outpost under the guise of an affluent birth assistant. Keeps a cold, predatory watch on the family, sending information to the Main House. Analyze Krish\'s bizarre, non-child behaviour, postures, eye movements and exceptional learning growth.', vowType: 'Unknown', quote: '“My instincts are screaming that this child is dangerous—an ancient soul or an evil spirit disguised as an angel.I must report this findings to the Main House immediately.This is not a protogy, this is a threat.”' },
+  { name: 'Indra', role: 'Crown Prince of Greenwood', minCh: 15, desc: 'The crownprince of Greenwood, Devi\'s brother. In terms of personality, Indra is chillingly manipulative.', vowType: 'Unknown', quote: '"Tell me, sister, shouldn\'t you do your part to lessen his heavy burden?"' },
+  { name: 'King Demihan', role: 'Sovereign of the Crags', minCh: 15, desc: 'The King of Oakridge, Basu\'s elder brother. A pragmatic, weary ruler who acts not out of hatred, but out of total strategic preservation.', vowType: 'Unknown', quote: '“Have you forgotten who we are, brother? We\'re the lineage of Raghav.We were meant to face danger from the exact moment of our birth.”' }
+];
+
+const NOVEL_LORE = [
+  { title: 'The Magic Laws: Equivalent Exchange', minCh: 4, summary: 'The fundamental absolute law of reality. A Sankalp is not a simple spell; it is a programmatic constraint.', rules: ['The formulation must be written in the active, absolute present tense.', 'Negative modifiers ("no", "not", "never") cannot be processed by the cosmic logic—the script does not understand absences, only direct affirmations.', 'Every outcome requires a strict, balanced sacrifice (e.g., giving up eyesight for night vision).'] },
+  { title: 'Sankalp Script Matrix Nodes', minCh: 4.5, summary: 'The underlying mathematics of Laone scripts. Standard words are compressed using specialized consonantal nodes.', rules: ['Consonants are reduced to unique nodes based on the phonetic dialect of the Living Script.', 'The resulting sequence is mapped sequentially onto visual glyph matrix maps.', 'By joining these nodes, a practitioner crafts the perfect, balanced sigil vector.'] },
+  { title: 'The Raghavan Swordsmanship', minCh: 5, summary: 'The elite legacy style of the Oakridge North. Basu trains Krish in the Raghavan fundamentals, which Krish.', rules: ['The Raghavan focus: balanced weight, low center of gravity, and crushing downward sweeping arcs.', 'Chakra Style: Utilizing specialized breathing arrays to super-heat the circular crescent blades, venting plumes of high-pressure steam into the snow.', 'Krish\'s modification: dropping shoulders inward to protect his toddler-sized chin, sacrifice of reach for immediate structural defense.'] },
+];
+
+const CHAPTER_CHRONOLOGY = [
+  { ch: 1, title: 'Aunt Yeashi', summary: 'Introduction to Van village. Devi’s pregnancy announcement and introduction to the hyperactive Aunt Yeashi\'s dreams of becoming an elite Laone script writer.' },
+  { ch: 2, title: 'Greenwood', summary: 'Krish evaluates his reincarnation his limits at 1 week old. Introduction of the three tiers of script vessels: Paper, Jade, and Iron.' },
+  { ch: 3, title: 'Village Tour', summary: 'Krish receives his emerald-studded solid Oak slate on his second birthday. The birth of Sister Mimi. Krish displays adult focus under extreme stress.' },
+  { ch: 4, title: 'Sister Mimi', summary: 'Yeashi explains the complex mechanics of syllabic reduction and numerical sigils to Krish, eventually trapping him using an imagery sigil.' },
+  { ch: 5, title: 'A Thousand Slashes', summary: 'Krish begins his brutal physical sword training under Basu on his fifth birthday. Formulates his plan to create a night vision talisman.' },
+  { ch: 6, title: 'Five Minutes Blindfold', summary: 'Krish executes his first true Sankalp: binding his eyes with paper talismans for 5 minutes in exchange for absolute midnight vision.' },
+  { ch: 7, title: 'Argue', summary: 'The experiment fails to behave safely; Krish is struck with a colossal fever. An argument erupts between Devi and Basu about overworking a five-year-old.' },
+  { ch: 8, title: 'Dreamwalk', summary: 'Krish discovers his fever dream was actually an astral projection caused by a mutated, rearranged script under his pillow. He makes contact with twin fox entities.' },
+  { ch: 9, title: 'Night Vision', summary: 'Krish wakes to find his vision hyper-sharpened, allowing him to see structural transparency through walls. Must devise a story to hide this from his family.' },
+  { ch: 10, title: 'Fear of Family', summary: 'The spell resets. Krish manages to walk down the stairs with ordinary eyes, hiding his bizarre adventure, and prepares to inspect the crossroads shrine.' },
+  { ch: 11, title: 'New Sword Style', summary: 'Basu displays the spectacular, terrifying efficiency of Raghavan Swordsmanship, venting plumes of hyper-heated steam after splitting a stone boundary wall.' },
+  { ch: 12, title: 'Sky God', summary: 'A devastating electric super-storm targets the village. Basu defends Swati and other villagers using specialized copper thunder rods.' },
+  { ch: 13, title: 'Dead Herder', summary: 'Krish meets the twin masked fox spirits at the stone altar crossroads. They warn him that his spiritual debt is actively accumulating interest.' },
+  { ch: 14, title: 'Calm Before Storm', summary: 'One year passes. Krish is now 6. Dipa is revealed to have received cold orders from Greenwood commanders to prepare for a forced extraction.' },
+  { ch: 15, title: 'Brother', summary: 'An elite legion of armed soldiers enters Brinda. King Demihan arrives on a mountain stallion, confronting Basu: "How are you, brother?"' },
+  { ch: 16, title: 'Threshold 1', summary: 'Basu bows. The grand myth of their quiet exile shattered. The twin fox spirits wave farewell from the border lines as the extraction carriage departs.' },
+  { ch: 17, title: 'Greenwood Return', summary: 'The Greenwood arc expands with new political pressure and family tensions as the story broadens beyond the border outpost.' },
+  { ch: 18, title: 'Inner Council', summary: 'Krish and the inner circle begin navigating Greenwood\'s deeper structures, alliances, and hidden agendas.' },
+  { ch: 19, title: 'Archive Signal', summary: 'A mysterious signal emerges from the old records, hinting at a much larger mythic system beneath the current conflict.' },
+  { ch: 20, title: 'Rootline', summary: 'The roots of the family legacy become central as new observers take interest in Krish’s unnatural progress.' },
+  { ch: 21, title: 'Threshold Echo', summary: 'Memories and consequences from the earlier chapters begin to echo through Greenwood’s political web.' },
+  { ch: 22, title: 'Mirror Oath', summary: 'Character loyalties are tested through a new oath that binds promises, power, and hidden sacrifice.' },
+  { ch: 23, title: 'Steel Bloom', summary: 'Training, politics, and memory converge as the next phase of the arc becomes increasingly intense.' },
+  { ch: 24, title: 'Hidden Path', summary: 'Krish uncovers a concealed route tied to Greenwood’s old military and magical infrastructure.' },
+  { ch: 25, title: 'Night Ward', summary: 'A vigil over the household reveals how much danger is building around the family from within and without.' },
+  { ch: 26, title: 'Crown Pressure', summary: 'The Greenwood hierarchy tightens its grip, forcing decisive reactions from the core cast.' },
+  { ch: 27, title: 'Broken Seal', summary: 'A long-buried seal breaks, releasing consequences that ripple through the arc’s power balance.' },
+  { ch: 28, title: 'Quiet Collapse', summary: 'A calm exterior masks a structural collapse in trust, safety, and political stability.' },
+  { ch: 29, title: 'Greenwood Verdict', summary: 'The arc moves toward judgment as the major factions reveal their final positions.' },
+  { ch: 30, title: 'Arc 2 Finale', summary: 'The Greenwood continuum closes with a strong transition into the next major story phase.' }
+];
