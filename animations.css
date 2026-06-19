@@ -1,0 +1,5 @@
+@keyframes cinematicCover { 0% { transform: scale(1.0) rotate(0deg); } 50% { transform: scale(1.02) rotate(0.3deg); } 100% { transform: scale(1.01) rotate(-0.3deg); } }
+.cinematic-cover { animation: cinematicCover 24s infinite alternate ease-in-out; }
+
+@keyframes nodePulse { 0%, 100% { box-shadow: 0 0 4px rgba(212, 175, 55, 0.3); } 50% { box-shadow: 0 0 12px rgba(212, 175, 55, 0.7); } }
+.node-pulse { animation: nodePulse 3s infinite ease-in-out; }
