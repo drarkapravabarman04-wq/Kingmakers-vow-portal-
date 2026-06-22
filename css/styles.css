@@ -8,3 +8,6 @@
 
 .tab-btn.active { color: #d4af37; border-color: #d4af37; }
 .arc-btn.active { background: rgba(212,175,55,0.16); color: #f9d99a; border-color: rgba(212,175,55,0.45); }
+#archive-card-content {
+    transition: opacity 0.4s ease;
+}
