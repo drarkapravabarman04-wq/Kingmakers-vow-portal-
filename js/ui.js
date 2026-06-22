@@ -113,54 +113,65 @@ function beginStory() {
 
 function toggleArchiveCard() {
 
+    const card = document.getElementById("archive-card");
+
     const title =
         document.getElementById("archive-card-title");
 
     const content =
         document.getElementById("archive-card-content");
 
-     content.innerHTML = `
-<div class="text-gold-500 text-center text-[10px] font-mono uppercase tracking-widest animate-pulse">
-ACCESSING DOSSIER...
-</div>
-`;
+    card.classList.add("scanning");
 
-setTimeout(() => {
-    if (!showingDossier) {
+    setTimeout(() => {
+        card.classList.remove("scanning");
+    }, 800);
 
-        const dossier =
-            ARC_DOSSIERS[currentArc];
+    content.style.opacity = "0";
 
-        title.textContent =
-            dossier.title;
+    content.innerHTML = `
+        <div class="text-gold-500 text-center text-[10px] font-mono uppercase tracking-widest animate-pulse">
+            ACCESSING DOSSIER...
+        </div>
+    `;
 
-        content.innerHTML = `
-            <p class="text-slate-300 text-xs md:text-sm leading-loose font-mono">
-                ${dossier.text}
-            </p>
-        `;
+    setTimeout(() => {
 
-        showingDossier = true;
+        if (!showingDossier) {
 
-    } else {
+            const dossier = ARC_DOSSIERS[currentArc];
 
-        title.textContent =
-            "Archive Abstract";
+            title.textContent = dossier.title;
 
-        content.innerHTML = `
-            <p class="text-slate-300 text-xs md:text-sm leading-loose font-mono">
-                A boy who wasted his first life is reborn into a world where
-                <span class="text-gold-500">power is born from promises.</span>
-            </p>
+            content.innerHTML = `
+                <p class="text-slate-300 text-xs md:text-sm leading-loose font-mono">
+                    ${dossier.text}
+                </p>
+            `;
 
-            <p class="text-slate-400 text-xs mt-3 leading-loose font-mono">
-                Every vow grants strength. Every broken promise erases futures.
-                Armed with knowledge from a ruined future, Krish Laran seeks
-                to master the art of Sankalp and reshape the destiny of kingdoms.
-            </p>
-        `;
+            showingDossier = true;
 
-        showingDossier = false;
-      content.style.opacity= "1"
+        } else {
+
+            title.textContent = "Archive Abstract";
+
+            content.innerHTML = `
+                <p class="text-slate-300 text-xs md:text-sm leading-loose font-mono">
+                    A boy who wasted his first life is reborn into a world where
+                    <span class="text-gold-500">power is born from promises.</span>
+                </p>
+
+                <p class="text-slate-400 text-xs mt-3 leading-loose font-mono">
+                    Every vow grants strength. Every broken promise erases futures.
+                    Armed with knowledge from a ruined future, Krish Laran seeks
+                    to master the art of Sankalp and reshape the destiny of kingdoms.
+                </p>
+            `;
+
+            showingDossier = false;
+        }
+
+        content.style.opacity = "1";
+
     }, 350);
 }
