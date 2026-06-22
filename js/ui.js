@@ -119,6 +119,13 @@ function toggleArchiveCard() {
     const content =
         document.getElementById("archive-card-content");
 
+     content.innerHTML = `
+<div class="text-gold-500 text-center text-[10px] font-mono uppercase tracking-widest animate-pulse">
+ACCESSING DOSSIER...
+</div>
+`;
+
+setTimeout(() => {
     if (!showingDossier) {
 
         const dossier =
@@ -154,5 +161,6 @@ function toggleArchiveCard() {
         `;
 
         showingDossier = false;
-    }
+      content.style.opacity= "1"
+    }, 350);
 }
