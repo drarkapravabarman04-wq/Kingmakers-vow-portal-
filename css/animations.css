@@ -1,14 +1,45 @@
-@keyframes kenBurns {
+@keyframes cinematicCoverRapid {
   0% {
-    transform: scale(1) translate3d(0, 0, 0);
+    transform: scale(1) rotate(0deg);
+  }
+
+  25% {
+    transform: scale(1.03) rotate(0.8deg);
+  }
+
+  50% {
+    transform: scale(1.06) rotate(0deg);
+  }
+
+  75% {
+    transform: scale(1.03) rotate(-0.8deg);
   }
 
   100% {
-    transform: scale(1.08) translate3d(-1%, -1%, 0);
+    transform: scale(1.05) rotate(0deg);
   }
 }
 
 .cinematic-cover {
-  animation: kenBurns 10s ease-in-out infinite alternate;
+  animation: cinematicCoverRapid 6s ease-in-out infinite alternate;
   will-change: transform;
+}
+
+@keyframes nodePulseRapid {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 6px rgba(212, 175, 55, 0.3);
+  }
+
+  50% {
+    transform: scale(1.15);
+    box-shadow:
+      0 0 14px rgba(212, 175, 55, 0.8),
+      0 0 28px rgba(212, 175, 55, 0.4);
+  }
+}
+
+.node-pulse {
+  animation: nodePulseRapid 1.2s ease-in-out infinite;
+  will-change: transform, box-shadow;
 }
