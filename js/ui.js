@@ -134,7 +134,7 @@ function toggleArchiveCard() {
             ACCESSING DOSSIER...
         </div>
     `;
-
+    content.style.opacity = "1";
     setTimeout(() => {
 
         if (!showingDossier) {
