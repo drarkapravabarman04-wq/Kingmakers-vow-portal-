@@ -1,5 +1,49 @@
-@keyframes cinematicCover { 0% { transform: scale(1.0) rotate(0deg); } 50% { transform: scale(1.02) rotate(0.3deg); } 100% { transform: scale(1.01) rotate(-0.3deg); } }
-.cinematic-cover { animation: cinematicCover 24s infinite alternate ease-in-out; }
+@keyframes cinematicCover {
+  0% {
+    transform: scale(1) translateY(0px) rotate(0deg);
+  }
 
-@keyframes nodePulse { 0%, 100% { box-shadow: 0 0 4px rgba(212, 175, 55, 0.3); } 50% { box-shadow: 0 0 12px rgba(212, 175, 55, 0.7); } }
-.node-pulse { animation: nodePulse 3s infinite ease-in-out; }
+  25% {
+    transform: scale(1.025) translateY(-4px) rotate(0.2deg);
+  }
+
+  50% {
+    transform: scale(1.04) translateY(-8px) rotate(0deg);
+  }
+
+  75% {
+    transform: scale(1.03) translateY(-4px) rotate(-0.2deg);
+  }
+
+  100% {
+    transform: scale(1.02) translateY(0px) rotate(-0.3deg);
+  }
+}
+
+.cinematic-cover {
+  animation: cinematicCover 30s ease-in-out infinite alternate;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+@keyframes nodePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 6px rgba(212, 175, 55, 0.25),
+      0 0 12px rgba(212, 175, 55, 0.15);
+  }
+
+  50% {
+    transform: scale(1.08);
+    box-shadow:
+      0 0 12px rgba(212, 175, 55, 0.65),
+      0 0 24px rgba(212, 175, 55, 0.35),
+      0 0 40px rgba(212, 175, 55, 0.15);
+  }
+}
+
+.node-pulse {
+  animation: nodePulse 2.8s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
