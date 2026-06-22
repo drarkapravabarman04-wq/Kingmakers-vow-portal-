@@ -102,4 +102,9 @@ function renderActiveSuiteData(limitChapter) {
 }
 
 function showChaptersList() { switchTab('pane-timeline'); }
-function readLatestChapter() { selectArc(currentArc); const slider = document.getElementById('slider-spoiler'); if (slider) handleSpoilerAdjustment(slider.value); }
+function beginStory() {
+    window.open(
+        "https://www.royalroad.com/fiction/151082/the-threshold/chapter/3002483/the-dream-that-doesnt-matter",
+        "_blank"
+    );
+}
