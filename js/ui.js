@@ -173,5 +173,5 @@ function toggleArchiveCard() {
 
         content.style.opacity = "1";
 
-    }, 1200);
+    }, 2000);
 }
