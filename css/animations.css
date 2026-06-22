@@ -9,6 +9,6 @@
 }
 
 .cinematic-cover {
-  animation: kenBurns 40s ease-in-out infinite alternate;
+  animation: kenBurns 10s ease-in-out infinite alternate;
   will-change: transform;
 }
