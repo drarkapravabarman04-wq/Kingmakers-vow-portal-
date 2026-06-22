@@ -121,6 +121,9 @@ function toggleArchiveCard() {
     const content =
         document.getElementById("archive-card-content");
 
+    const toggleBtn =
+        document.getElementById("archive-toggle-btn");
+  
     card.classList.add("scanning");
 
     setTimeout(() => {
@@ -150,6 +153,7 @@ function toggleArchiveCard() {
             `;
 
             showingDossier = true;
+          toggleBtn.textContent = "Return to Abstract";
 
         } else {
 
@@ -169,6 +173,7 @@ function toggleArchiveCard() {
             `;
 
             showingDossier = false;
+          toggleBtn.textContent = "View Dossier";
         }
 
         content.style.opacity = "1";
