@@ -1,5 +1,7 @@
 let currentArc = 1;
 
+let showingDossier = false;
+
 function switchTab(targetTabId) {
   document.querySelectorAll('.tab-pane').forEach(p => p.classList.add('hidden'));
   document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active', 'text-gold-500', 'border-b-2', 'border-gold-500'); b.classList.add('text-slate-400'); });
@@ -107,4 +109,50 @@ function beginStory() {
         "https://www.royalroad.com/fiction/151082/the-threshold/chapter/3002483/the-dream-that-doesnt-matter",
         "_blank"
     );
+}
+
+function toggleArchiveCard() {
+
+    const title =
+        document.getElementById("archive-card-title");
+
+    const content =
+        document.getElementById("archive-card-content");
+
+    if (!showingDossier) {
+
+        const dossier =
+            ARC_DOSSIERS[currentArc];
+
+        title.textContent =
+            dossier.title;
+
+        content.innerHTML = `
+            <p class="text-slate-300 text-xs md:text-sm leading-loose font-mono">
+                ${dossier.text}
+            </p>
+        `;
+
+        showingDossier = true;
+
+    } else {
+
+        title.textContent =
+            "Archive Abstract";
+
+        content.innerHTML = `
+            <p class="text-slate-300 text-xs md:text-sm leading-loose font-mono">
+                A boy who wasted his first life is reborn into a world where
+                <span class="text-gold-500">power is born from promises.</span>
+            </p>
+
+            <p class="text-slate-400 text-xs mt-3 leading-loose font-mono">
+                Every vow grants strength. Every broken promise erases futures.
+                Armed with knowledge from a ruined future, Krish Laran seeks
+                to master the art of Sankalp and reshape the destiny of kingdoms.
+            </p>
+        `;
+
+        showingDossier = false;
+    }
 }
