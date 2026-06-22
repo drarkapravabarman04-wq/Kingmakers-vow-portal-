@@ -39,9 +39,9 @@ const CHAPTER_CHRONOLOGY = [
   { ch: 14, title: 'Calm Before Storm', summary: 'One year passes. Krish is now 6. Dipa is revealed to have received cold orders from Greenwood commanders to prepare for a forced extraction.' },
   { ch: 15, title: 'Brother', summary: 'An elite legion of armed soldiers enters Brinda. King Demihan arrives on a mountain stallion, confronting Basu: "How are you, brother?"' },
   { ch: 16, title: 'Threshold 1', summary: 'Basu bows. The grand myth of their quiet exile shattered. The twin fox spirits wave farewell from the border lines as the extraction carriage departs.' },
-  { ch: 17, title: 'Greenwood Return', summary: 'The Greenwood arc expands with new political pressure and family tensions as the story broadens beyond the border outpost.' },
-  { ch: 18, title: 'Inner Council', summary: 'Krish and the inner circle begin navigating Greenwood\'s deeper structures, alliances, and hidden agendas.' },
-  { ch: 19, title: 'Archive Signal', summary: 'A mysterious signal emerges from the old records, hinting at a much larger mythic system beneath the current conflict.' },
+  { ch: 17, title: 'Names Matter', summary: 'Krish started his journey toward Oakridge. He saw a gate with runes on it and noticed the Algiz rune. He learned that his father\'s name is not Basu but Basu.' },
+  { ch: 18, title: 'How Your Mother Met Your Father', summary: 'The flashback story of the first meeting of two destined royals.' },
+  { ch: 19, title: 'Green Canopy', summary: 'A mysterious journey in the dangerous elder forest of Greenwood.' },
   { ch: 20, title: 'Rootline', summary: 'The roots of the family legacy become central as new observers take interest in Krish’s unnatural progress.' },
   { ch: 21, title: 'Threshold Echo', summary: 'Memories and consequences from the earlier chapters begin to echo through Greenwood’s political web.' },
   { ch: 22, title: 'Mirror Oath', summary: 'Character loyalties are tested through a new oath that binds promises, power, and hidden sacrifice.' },
@@ -54,3 +54,25 @@ const CHAPTER_CHRONOLOGY = [
   { ch: 29, title: 'Greenwood Verdict', summary: 'The arc moves toward judgment as the major factions reveal their final positions.' },
   { ch: 30, title: 'Arc 2 Finale', summary: 'The Greenwood continuum closes with a strong transition into the next major story phase.' }
 ];
+
+const ARC_DOSSIERS = {
+    1: {
+        title: "Greenwood Dossier",
+        text: `
+        Krish spends his early years in Brinda,
+        mastering the foundations of Sankalp and swordsmanship while
+        hidden observers and political forces begin
+        moving beyond the border. And deities started to show interest in him.
+        `
+    },
+
+    2: {
+        title: "Arc 2 Dossier",
+        text: `
+        Old promises return.
+        New factions enter the board. Krish left his village Van with his sister Mimi.
+
+        The game of kingdoms begins.
+        `
+    }
+};
